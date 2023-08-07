@@ -21,14 +21,13 @@ public:
 	// 返回索引为 theIndex 的元素
 	T& get(int theIndex) const;
 	// 返回元素 theElment 第一次出现的索引
-	int indexoO(const T& theElement) const;
+	int indexOf(const T& theElement) const;
 	// 删除元素为 theIndex 的元素
 	void earse(int theIndex);
 	// 把 theElement 插入线性表索引为 theIndex 的位置
 	void insert(int theIndex, const T& theElement);
 
-
-public:
+private:
 	// 若索引 theIndex 无效， 则抛出异常
 	void checkIndex(int theIndex) const;
 	T* element;			// 存储线性表元素的一维数组， 数组首地址

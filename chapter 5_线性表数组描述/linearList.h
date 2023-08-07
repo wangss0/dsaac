@@ -19,7 +19,7 @@ public:
 	// 返回索引为 theIndex 的元素
 	virtual T& get(int theIndex) const = 0;
 	// 返回元素 theElment 第一次出现的索引
-	virtual int indexoO(const T& theElement) const = 0;
+	virtual int indexOf(const T& theElement) const = 0;
 	// 删除元素为 theIndex 的元素
 	virtual void earse(int theIndex) = 0;
 	// 把 theElement 插入线性表索引为 theIndex 的位置
