@@ -25,6 +25,14 @@ private:
 
 void testStack(stack<person>& s)
 {
+	try
+	{
+		s.top();
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << "Exception occurred: " << e.what() << std::endl;
+	}
 	person p1(11, "p1");
 	person p2(22, "p2");
 	person p3(33, "p3");
