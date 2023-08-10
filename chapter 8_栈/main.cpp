@@ -2,6 +2,8 @@
 
 
 #include "arrayStack.h"
+#include "linkedStack.h"
+#include "stack.h"
 
 using std::string; 
 using std::cout;
@@ -21,31 +23,43 @@ private:
 	string name;
 };
 
-void testArrayStack()
+void testStack(stack<person>& s)
 {
-	arrayStack<person> as;
-	person p1(12, "wang");
-	person p2(13, "li");
-	person p3(77, "zhang");
+	person p1(11, "p1");
+	person p2(22, "p2");
+	person p3(33, "p3");
+	person p4(44, "p4");
+	person p5(55, "p5");
+	person p6(66, "p6");
+	person p7(77, "p7");
 
 	// Ñ¹Õ»
-	as.push(p1);
-	as.push(p2);
-	as.push(p3);
+	s.push(p1);
+	s.push(p2);
+	s.push(p3);
+	s.push(p4);
+	s.push(p5);
+	s.push(p6);
+	s.push(p7);
 
-	as.top().personPrint();
+
+
+	s.top().personPrint();
 	// µ¯Õ»²¢Êä³ö
-	while (!as.empty())
+	while (!s.empty())
 	{
-		person topPerson = as.top();
+		person topPerson = s.top();
 		topPerson.personPrint();
-		as.pop();
+		s.pop();
 	}
 }
-
 int main()
 {
-	testArrayStack();
+	arrayStack<person> as;
+	testStack(as);
+
+	linkedStack<person> ls;
+	testStack(ls);
 	system("pause");
 	return 0;
 }

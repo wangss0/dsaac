@@ -10,7 +10,7 @@ template <class T>
 class arrayStack : public stack<T>
 {
 public:
-	arrayStack(int initialCapacity = 10);
+	arrayStack(int initialCapacity = 5);
 	~arrayStack() { delete[] stack; }
 
 	bool empty() const { return  stackTop == -1; }

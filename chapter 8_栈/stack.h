@@ -8,7 +8,7 @@ template <class T>
 class stack
 {
 public:
-	// virtual ~stack() {};
+	virtual ~stack() {};
 	virtual bool empty() const = 0;
 	virtual int size() const = 0;
 	// 返回栈顶元素的引用
