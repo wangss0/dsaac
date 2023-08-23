@@ -9,6 +9,7 @@ void test01()
     ALGraph<char> G;
     G.arcNum = 5;
     G.vexNum = 6;
+ 
     VNode<char> node1('a');
     VNode<char> node2('b');
     G.vertices.push_back(node1);
@@ -16,15 +17,28 @@ void test01()
 
     cout << G.vertices[1].data << endl;
 
-    ArcNode* p = G.vertices[1].firstArc;
-    p->adjvex = 4;
+  
+    /*ArcNode* p = G.vertices[1].firstArc;
+    p->adjvex = 4;*/
 }
 
 void testUDG()
 {
-    ALGraph<char> graph(5, 6);
+    ALGraph<int> graph(6, 6);
     graph.creatUDG();
     graph.printUDG();
+    graph.generateAdjacencyMatrix();
+    cout << "ÁÚ½Ó¾ØÕó£º" << endl;
+    for (const auto& row : graph.adjacencyMatrix) {
+        for (const auto& value : row) {
+            cout << value << " ";
+        }
+        cout << endl;
+    }
+
+
+    graph.DFSTraversal();
+    graph.BFSTraversal();
 }
 
 int main()
